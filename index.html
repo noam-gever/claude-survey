@@ -4,177 +4,199 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>שאלון קצר | קורס קלוד קוד | נעם AI</title>
-<meta name="description" content="2 דקות, ובסוף מחכה לכם קוד הנחה של 200 ש״ח לקורס קלוד קוד.">
-<meta property="og:title" content="שאלון קצר לפני השקת קורס קלוד קוד">
-<meta property="og:description" content="2 דקות, ובסוף מחכה לכם קוד הנחה של 200 ש״ח.">
+<meta name="description" content="דקה וחצי, ובסוף מחכה לכם קוד הנחה של 200 ש״ח לקורס קלוד קוד.">
+<meta property="og:title" content="שאלון קצרצר לפני השקת קורס קלוד קוד">
+<meta property="og:description" content="דקה וחצי, ובסוף מחכה לכם קוד הנחה של 200 ש״ח.">
+<meta name="theme-color" content="#2F5BEA">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap">
 <style>
-:root{--bg:#F2F5F8;--card:#fff;--ink:#14212B;--muted:#5E6D79;--line:#D9E1E7;--accent:#2F5BEA;--accent-ink:#fff;--soft:#E9EEFE;--ok:#0F7A5C;--err:#C2382F;--font:"Rubik",system-ui,-apple-system,sans-serif}
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-.wrap{max-width:640px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
-.brand{font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--accent)}
-.hero{background:var(--card);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;border-top:6px solid var(--accent)}
-h1{margin:0;font-size:clamp(25px,6vw,32px);line-height:1.25;font-weight:800;text-wrap:balance}
-.lead{margin:0;color:var(--muted)}
-.gift{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:var(--soft);color:var(--accent);font-weight:700;border-radius:999px;padding:6px 14px;font-size:15px}
-form{display:flex;flex-direction:column;gap:14px}
-.q{background:var(--card);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;border:2px solid transparent;transition:border-color .15s}
-.q.bad{border-color:var(--err)}
-.q label.t,.q legend{font-weight:700;font-size:18px;padding:0}
-.q .hint{color:var(--muted);font-size:14px;margin-top:-6px}
-fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-input[type=text],input[type=tel],textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
-textarea{min-height:110px;resize:vertical}
-input:focus,textarea:focus{outline:none;border-color:var(--accent);background:var(--card)}
-.opts{display:flex;flex-direction:column;gap:8px}
-.opt{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;transition:all .12s}
-.opt:hover{border-color:var(--accent)}
-.opt input{accent-color:var(--accent);width:18px;height:18px;margin:0;flex:none}
-.opt:has(input:checked){border-color:var(--accent);background:var(--soft)}
-.err{color:var(--err);font-size:14px;display:none}
-.q.bad .err{display:block}
-button{font:inherit;font-weight:700;font-size:19px;border:0;border-radius:14px;padding:16px;background:var(--accent);color:var(--accent-ink);cursor:pointer}
-button:disabled{opacity:.6;cursor:wait}
-button:focus-visible,.opt:focus-within{outline:3px solid var(--soft);outline-offset:2px}
-.status{text-align:center;font-size:15px;color:var(--err);min-height:1.2em;margin:0}
-.done{background:var(--card);border-radius:20px;padding:30px 22px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;border-top:6px solid var(--ok)}
-.code{font-size:34px;font-weight:800;letter-spacing:.08em;border:2px dashed var(--accent);border-radius:14px;padding:12px 24px;color:var(--accent);background:var(--soft);user-select:all;direction:ltr}
-.copy{font-size:16px;padding:10px 20px;background:var(--ink)}
-.small{font-size:14px;color:var(--muted);margin:0}
-.foot{text-align:center;font-size:13px;color:var(--muted)}
+:root{--bg:#F2F5F8;--card:#fff;--ink:#14212B;--muted:#64727E;--line:#DCE3E9;--accent:#2F5BEA;--soft:#E9EEFE;--ok:#0F7A5C;--err:#C2382F;--font:"Rubik",system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.45;overflow:hidden}
+.app{height:100%;height:100dvh;max-width:520px;margin:0 auto;display:flex;flex-direction:column;
+  padding-top:max(14px,env(safe-area-inset-top,0px));padding-bottom:max(14px,env(safe-area-inset-bottom,0px));
+  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.top{display:flex;align-items:center;gap:12px;height:40px;flex:none}
+.brand{font-weight:800;font-size:15px;color:var(--accent)}
+.bar{flex:1;height:6px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:9px;transition:width .35s ease}
+.back{background:none;border:0;font:inherit;color:var(--muted);font-size:15px;padding:6px 2px;cursor:pointer;visibility:hidden}
+.stage{flex:1;position:relative;min-height:0}
+.step{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:0;transform:translateX(-24px);pointer-events:none;transition:opacity .28s ease,transform .28s ease}
+.step.on{opacity:1;transform:none;pointer-events:auto}
+.step.left{transform:translateX(24px)}
+h1{margin:0;font-size:clamp(24px,6.6vw,30px);line-height:1.22;font-weight:800;text-wrap:balance}
+.sub{margin:0;color:var(--muted);font-size:16px}
+.gift{align-self:flex-start;background:var(--soft);color:var(--accent);font-weight:700;border-radius:999px;padding:6px 14px;font-size:15px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:14px;font-weight:500;color:var(--muted)}
+input,textarea{width:100%;font:inherit;font-size:17px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px}
+textarea{height:120px;resize:none}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+input.bad,textarea.bad{border-color:var(--err)}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{font:inherit;font-size:17px;text-align:right;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:border-color .12s,background .12s}
+.opt:active{transform:scale(.99)}
+.opt.sel{border-color:var(--accent);background:var(--soft);font-weight:500}
+.opt .box{width:20px;height:20px;border:1.5px solid var(--line);border-radius:6px;flex:none;display:grid;place-items:center;font-size:13px;color:#fff}
+.opt.sel .box{background:var(--accent);border-color:var(--accent)}
+.go{font:inherit;font-weight:700;font-size:18px;border:0;border-radius:14px;padding:15px;background:var(--accent);color:#fff;cursor:pointer;width:100%}
+.go:disabled{opacity:.55}
+.msg{color:var(--err);font-size:14px;min-height:1.2em;margin:0}
+.code{align-self:center;font-size:32px;font-weight:800;letter-spacing:.08em;border:2px dashed var(--accent);border-radius:14px;padding:10px 24px;color:var(--accent);background:var(--soft);user-select:all;direction:ltr}
+.center{text-align:center;align-items:stretch}
+.copy{background:var(--ink)}
+.foot{flex:none;text-align:center;font-size:12px;color:var(--muted);height:18px}
+button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-offset:2px}
+@media (max-height:620px){h1{font-size:22px}.opt{padding:12px 14px}textarea{height:90px}.step{gap:10px}}
+@media (prefers-reduced-motion:reduce){.step,.bar i{transition:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="brand">נעם AI</div>
-
-  <div id="intro" class="hero">
-    <h1>רגע לפני שקורס קלוד קוד יוצא, אני רוצה לשמוע מכם</h1>
-    <p class="lead">5 שאלות קצרות, באמת 2 דקות. התשובות שלכם יעזרו לי לדעת מה הכי חשוב לכם.</p>
-    <span class="gift">🎁 בסוף מחכה לכם קוד הנחה של 200 ש״ח</span>
+<div class="app">
+  <div class="top">
+    <button class="back" id="back" type="button">→ חזרה</button>
+    <div class="bar"><i id="bar"></i></div>
+    <span class="brand">נעם AI</span>
   </div>
 
-  <form id="f" novalidate>
-    <div class="q" data-req="name">
-      <label class="t" for="name">איך קוראים לך?</label>
-      <input type="text" id="name" name="name" autocomplete="name" maxlength="120">
-      <span class="err">צריך שם, כדי שאדע למי לשלוח את ההנחה</span>
-    </div>
+  <div class="stage" id="stage">
+    <!-- 0: פרטים -->
+    <section class="step on" data-step="0">
+      <span class="gift">🎁 בסוף: קוד הנחה של 200 ש״ח</span>
+      <h1>רגע לפני שהקורס יוצא, 4 שאלות קצרצרות</h1>
+      <div class="field"><label for="name">שם</label><input id="name" autocomplete="name" maxlength="120"></div>
+      <div class="field"><label for="phone">וואטסאפ, כדי לשלוח לך את קוד ההנחה</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" dir="ltr" style="text-align:right"></div>
+      <div class="field"><label for="email">מייל (לא חובה)</label><input id="email" type="email" inputmode="email" autocomplete="email" maxlength="200" dir="ltr" style="text-align:right"></div>
+      <p class="msg" id="m0"></p>
+      <button class="go" data-next="0" type="button">יאללה, מתחילים</button>
+    </section>
 
-    <div class="q" data-req="phone">
-      <label class="t" for="phone">מספר וואטסאפ</label>
-      <span class="hint">כדי שאוכל לעדכן אותך ברגע שההשקה נפתחת</span>
-      <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" dir="ltr" style="text-align:right">
-      <span class="err">צריך מספר טלפון תקין</span>
-    </div>
+    <!-- 1: עיסוק -->
+    <section class="step" data-step="1">
+      <h1>במה אתה עוסק?</h1>
+      <div class="opts" data-key="occupation" data-auto>
+        <button class="opt" type="button">בעל עסק</button>
+        <button class="opt" type="button">עצמאי / פרילנסר</button>
+        <button class="opt" type="button">שכיר</button>
+        <button class="opt" type="button">אחר</button>
+      </div>
+    </section>
 
-    <div class="q" data-req="occupation">
-      <fieldset>
-        <legend>במה אתה עוסק?</legend>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="occupation" value="בעל עסק"> בעל עסק</label>
-          <label class="opt"><input type="radio" name="occupation" value="עצמאי / פרילנסר"> עצמאי / פרילנסר</label>
-          <label class="opt"><input type="radio" name="occupation" value="שכיר"> שכיר</label>
-          <label class="opt"><input type="radio" name="occupation" value="אחר"> אחר</label>
-        </div>
-        <input type="text" id="field" name="field" maxlength="300" placeholder="ובאיזה תחום? (למשל: הפקת אירועים, הנהלת חשבונות, חינוך)">
-      </fieldset>
-      <span class="err">בחרו אפשרות אחת</span>
-    </div>
+    <!-- 2: רמה -->
+    <section class="step" data-step="2">
+      <h1>איפה אתה היום עם בינה מלאכותית?</h1>
+      <div class="opts" data-key="ai_level" data-auto>
+        <button class="opt" type="button">עוד לא ממש השתמשתי</button>
+        <button class="opt" type="button">צ׳אט GPT או ג׳מיני מדי פעם</button>
+        <button class="opt" type="button">משתמש בזה הרבה</button>
+        <button class="opt" type="button">כבר נגעתי בקלוד קוד</button>
+      </div>
+    </section>
 
-    <div class="q" data-req="ai_level">
-      <fieldset>
-        <legend>איפה אתה היום עם בינה מלאכותית?</legend>
-        <div class="opts">
-          <label class="opt"><input type="radio" name="ai_level" value="עוד לא השתמשתי"> עוד לא ממש השתמשתי</label>
-          <label class="opt"><input type="radio" name="ai_level" value="צ׳אט GPT / ג׳מיני מדי פעם"> צ׳אט GPT או ג׳מיני מדי פעם</label>
-          <label class="opt"><input type="radio" name="ai_level" value="משתמש הרבה"> משתמש בזה הרבה</label>
-          <label class="opt"><input type="radio" name="ai_level" value="כבר נגעתי בקלוד קוד"> כבר נגעתי בקלוד קוד</label>
-        </div>
-      </fieldset>
-      <span class="err">בחרו אפשרות אחת</span>
-    </div>
+    <!-- 3: עובד -->
+    <section class="step" data-step="3">
+      <h1>אם היה לך עובד על המחשב, מה הדבר הראשון שהיית נותן לו?</h1>
+      <p class="sub">משהו שלוקח לך זמן או מעצבן אותך. כמה מילים מספיקות</p>
+      <textarea id="first_task" maxlength="3000" placeholder="למשל: הצעות מחיר, לעצב סטטוסים, לסדר חשבוניות..."></textarea>
+      <p class="msg" id="m3"></p>
+      <button class="go" data-next="3" type="button">המשך</button>
+    </section>
 
-    <div class="q" data-req="first_task">
-      <label class="t" for="first_task">אם היה לך עובד על המחשב, מה הדבר הראשון שהיית נותן לו לעשות?</label>
-      <span class="hint">כל דבר שלוקח לך זמן או מעצבן אותך. כמה מילים מספיקות</span>
-      <textarea id="first_task" name="first_task" maxlength="3000" placeholder="למשל: להכין הצעות מחיר, לעצב סטטוסים, לסדר חשבוניות..."></textarea>
-      <span class="err">כתבו לפחות כמה מילים</span>
-    </div>
+    <!-- 4: חסמים -->
+    <section class="step" data-step="4">
+      <h1>מה הכי מעכב אותך?</h1>
+      <p class="sub">אפשר לבחור כמה</p>
+      <div class="opts" data-key="blockers" data-multi>
+        <button class="opt" type="button"><span class="box">✓</span>לא יודע מאיפה להתחיל</button>
+        <button class="opt" type="button"><span class="box">✓</span>נשמע מסובך וטכני</button>
+        <button class="opt" type="button"><span class="box">✓</span>פחד שיעשה נזק או לפרטיות</button>
+        <button class="opt" type="button"><span class="box">✓</span>אין לי זמן</button>
+        <button class="opt" type="button"><span class="box">✓</span>המחיר</button>
+      </div>
+      <p class="msg" id="m4"></p>
+      <button class="go" id="send" type="button">שליחה וקבלת הקוד 🎁</button>
+    </section>
 
-    <div class="q">
-      <fieldset>
-        <legend>מה הכי מעכב או מפחיד אותך?</legend>
-        <span class="hint">אפשר לבחור כמה</span>
-        <div class="opts">
-          <label class="opt"><input type="checkbox" name="blockers" value="לא יודע מאיפה להתחיל"> לא יודע מאיפה להתחיל</label>
-          <label class="opt"><input type="checkbox" name="blockers" value="נשמע מסובך / טכני"> נשמע מסובך וטכני מדי</label>
-          <label class="opt"><input type="checkbox" name="blockers" value="פחד שיעשה נזק / פרטיות"> פחד שיעשה נזק במחשב או לפרטיות</label>
-          <label class="opt"><input type="checkbox" name="blockers" value="אין לי זמן"> אין לי זמן ללמוד</label>
-          <label class="opt"><input type="checkbox" name="blockers" value="מחיר"> המחיר</label>
-        </div>
-        <input type="text" id="blocker_other" name="blocker_other" maxlength="1000" placeholder="משהו אחר? כתבו כאן">
-      </fieldset>
-    </div>
-
-    <button type="submit" id="btn">שליחה וקבלת קוד ההנחה</button>
-    <p class="status" id="status" role="status"></p>
-  </form>
-
-  <div id="done" class="done" hidden>
-    <h1>תודה רבה! 🙏</h1>
-    <p class="lead">הנה קוד ההנחה שלך, 200 ש״ח על קורס קלוד קוד:</p>
-    <div class="code" id="code">CLAUDE200</div>
-    <button class="copy" id="copy" type="button">העתקת הקוד</button>
-    <p class="small">הקוד תקף רק בהשקה המוקדמת, בתחילת השבוע הבא. שימו עין על הסטטוס 👀</p>
+    <!-- 5: תודה -->
+    <section class="step center" data-step="5">
+      <h1>תודה רבה! 🙏</h1>
+      <p class="sub">הקוד שלך, 200 ש״ח הנחה על קורס קלוד קוד:</p>
+      <div class="code" id="code">CLAUDE200</div>
+      <button class="go copy" id="copy" type="button">העתקת הקוד</button>
+      <p class="sub" style="font-size:14px">תקף רק בהשקה המוקדמת, בתחילת השבוע הבא. שימו עין על הסטטוס 👀</p>
+    </section>
   </div>
 
-  <p class="foot">נעם AI · התשובות נשמרות אצלי בלבד ולא מועברות לאף אחד</p>
+  <div class="foot">התשובות נשמרות אצלי בלבד</div>
 </div>
 
 <script>
 (function(){
-  var URL_ = "https://xvqdukxdwgwxoixzdosx.supabase.co/rest/v1/launch_survey";
-  var KEY = "sb_publishable_giqmoCG-HL9J3OLU0MhtYg_IClNM7L5";
-  var f = document.getElementById('f'), btn = document.getElementById('btn'), st = document.getElementById('status');
-  var src = (new URLSearchParams(location.search).get('src') || '').slice(0,60) || null;
+  var API="https://xvqdukxdwgwxoixzdosx.supabase.co/rest/v1/launch_survey", KEY="sb_publishable_giqmoCG-HL9J3OLU0MhtYg_IClNM7L5";
+  var steps=[].slice.call(document.querySelectorAll('.step')), cur=0, LAST=4;
+  var data={occupation:null,ai_level:null,blockers:[]};
+  var src=(new URLSearchParams(location.search).get('src')||'').slice(0,60)||null;
+  var $=function(id){return document.getElementById(id)};
 
-  function val(n){ var el=f.elements[n]; if(!el) return ''; if(el.length!==undefined && el.tagName===undefined){ for(var i=0;i<el.length;i++) if(el[i].checked) return el[i].value; return ''; } return (el.value||'').trim(); }
-  function showDone(){ document.getElementById('intro').hidden=true; f.hidden=true; document.getElementById('done').hidden=false; window.scrollTo(0,0); }
-  try{ if(localStorage.getItem('survey_done')==='1') showDone(); }catch(e){}
+  function go(n){
+    var dir=n>cur;
+    steps[cur].classList.remove('on'); steps[cur].classList.toggle('left',!dir);
+    cur=n; steps[cur].classList.remove('left'); steps[cur].classList.add('on');
+    $('bar').style.width=Math.min(100,(cur/(LAST+1))*100)+'%';
+    $('back').style.visibility=(cur>0&&cur<5)?'visible':'hidden';
+    var f=steps[cur].querySelector('input,textarea'); if(f&&cur!==0) setTimeout(function(){f.focus({preventScroll:true})},300);
+  }
+  try{ if(localStorage.getItem('survey_done')==='1'){ steps[0].classList.remove('on'); cur=5; steps[5].classList.add('on'); $('bar').style.width='100%'; } }catch(e){}
 
-  f.addEventListener('submit', function(e){
-    e.preventDefault(); st.textContent='';
-    var data = {
-      name: val('name'), phone: val('phone'), occupation: val('occupation')||null,
-      field: val('field')||null, ai_level: val('ai_level')||null, first_task: val('first_task')||null,
-      blockers: Array.prototype.slice.call(f.querySelectorAll('input[name=blockers]:checked')).map(function(x){return x.value}),
-      blocker_other: val('blocker_other')||null, source: src
+  $('back').onclick=function(){ if(cur>0) go(cur-1); };
+
+  document.querySelectorAll('.opts').forEach(function(g){
+    var key=g.dataset.key, multi=g.hasAttribute('data-multi');
+    g.querySelectorAll('.opt').forEach(function(b){
+      b.onclick=function(){
+        var v=b.textContent.replace('✓','').trim();
+        if(multi){ b.classList.toggle('sel'); data[key]=[].slice.call(g.querySelectorAll('.sel')).map(function(x){return x.textContent.replace('✓','').trim()}); return; }
+        g.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel')}); b.classList.add('sel'); data[key]=v;
+        setTimeout(function(){ go(cur+1); },260);
+      };
+    });
+  });
+
+  document.querySelectorAll('[data-next]').forEach(function(b){
+    b.onclick=function(){
+      var s=+b.dataset.next;
+      if(s===0){
+        var ok=true, nm=$('name'), ph=$('phone'), em=$('email');
+        [nm,ph,em].forEach(function(x){x.classList.remove('bad')});
+        if(!nm.value.trim()){nm.classList.add('bad');ok=false}
+        if(ph.value.replace(/\D/g,'').length<9){ph.classList.add('bad');ok=false}
+        if(em.value.trim() && !/^\S+@\S+\.\S+$/.test(em.value.trim())){em.classList.add('bad');ok=false}
+        $('m0').textContent=ok?'':'צריך שם ומספר וואטסאפ תקין';
+        if(!ok) return;
+        document.activeElement && document.activeElement.blur();
+      }
+      if(s===3){ var t=$('first_task'); if(t.value.trim().length<2){ t.classList.add('bad'); $('m3').textContent='כתבו כמה מילים'; return; } t.classList.remove('bad'); $('m3').textContent=''; document.activeElement.blur(); }
+      go(s+1);
     };
-    var bad = [];
-    if(!data.name) bad.push('name');
-    if(data.phone.replace(/\D/g,'').length < 9) bad.push('phone');
-    if(!data.occupation) bad.push('occupation');
-    if(!data.ai_level) bad.push('ai_level');
-    if(!data.first_task || data.first_task.length < 2) bad.push('first_task');
-    f.querySelectorAll('.q').forEach(function(q){ q.classList.toggle('bad', bad.indexOf(q.dataset.req)>-1); });
-    if(bad.length){ var first=f.querySelector('.q.bad'); first.scrollIntoView({behavior:'smooth',block:'center'}); return; }
-
-    try{ localStorage.setItem('survey_draft', JSON.stringify(data)); }catch(e){}
-    btn.disabled = true; btn.textContent = 'שולח...';
-    fetch(URL_, { method:'POST', headers:{ 'apikey':KEY, 'Authorization':'Bearer '+KEY, 'Content-Type':'application/json', 'Prefer':'return=minimal' }, body: JSON.stringify(data) })
-      .then(function(r){ if(!r.ok) throw new Error(r.status); try{ localStorage.setItem('survey_done','1'); localStorage.removeItem('survey_draft'); }catch(e){} showDone(); })
-      .catch(function(){ btn.disabled=false; btn.textContent='שליחה וקבלת קוד ההנחה'; st.textContent='משהו השתבש בשליחה. בדקו שיש אינטרנט ונסו שוב. התשובות שלכם לא נמחקו.'; });
   });
 
-  f.addEventListener('input', function(e){ var q=e.target.closest('.q'); if(q) q.classList.remove('bad'); });
-  document.getElementById('copy').addEventListener('click', function(){
-    var c = document.getElementById('code').textContent, b=this;
-    (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(function(){ b.textContent='הועתק ✓'; }).catch(function(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('code')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='סמנו והעתיקו'; });
-  });
+  $('send').onclick=function(){
+    var b=this; b.disabled=true; b.textContent='שולח...'; $('m4').textContent='';
+    var body={ name:$('name').value.trim(), phone:$('phone').value.trim(), email:$('email').value.trim()||null,
+      occupation:data.occupation, ai_level:data.ai_level, first_task:$('first_task').value.trim(), blockers:data.blockers, source:src };
+    fetch(API,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(body)})
+      .then(function(r){ if(!r.ok) throw 0; try{localStorage.setItem('survey_done','1')}catch(e){} go(5); })
+      .catch(function(){ b.disabled=false; b.textContent='שליחה וקבלת הקוד 🎁'; $('m4').textContent='משהו השתבש. בדקו שיש אינטרנט ונסו שוב, התשובות לא נמחקו.'; });
+  };
+
+  $('copy').onclick=function(){
+    var b=this,c=$('code').textContent;
+    (navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='הועתק ✓'}).catch(function(){var r=document.createRange();r.selectNodeContents($('code'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='סמנו והעתיקו'});
+  };
+  document.addEventListener('keydown',function(e){ if(e.key==='Enter'&&e.target.tagName==='INPUT'){ var g=steps[cur].querySelector('[data-next]'); if(g) g.click(); }});
 })();
 </script>
 </body>
