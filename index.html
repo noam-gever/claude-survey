@@ -7,57 +7,102 @@
 <meta name="description" content="דקה וחצי, ובסוף מחכה לכם קוד הנחה של 200 ש״ח לקורס קלוד קוד.">
 <meta property="og:title" content="שאלון קצרצר לפני השקת קורס קלוד קוד">
 <meta property="og:description" content="דקה וחצי, ובסוף מחכה לכם קוד הנחה של 200 ש״ח.">
-<meta name="theme-color" content="#2F5BEA">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap">
 <style>
-:root{--bg:#F2F5F8;--card:#fff;--ink:#14212B;--muted:#64727E;--line:#DCE3E9;--accent:#2F5BEA;--soft:#E9EEFE;--ok:#0F7A5C;--err:#C2382F;--font:"Rubik",system-ui,-apple-system,sans-serif}
+:root{--bg:#FFFFFF;--ink:#0F2A30;--muted:#5F7175;--faint:#93A2A5;--line:#E2E8E9;--field:#F4F7F7;--accent:#0B7A85;--accent-press:#096670;--soft:#E9F5F6;--err:#C8372D;--font:"Heebo",system-ui,-apple-system,"Segoe UI",sans-serif;--ease:cubic-bezier(.22,.7,.2,1)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.45;overflow:hidden}
-.app{height:100%;height:100dvh;max-width:520px;margin:0 auto;display:flex;flex-direction:column;
-  padding-top:max(14px,env(safe-area-inset-top,0px));padding-bottom:max(14px,env(safe-area-inset-bottom,0px));
-  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-.top{display:flex;align-items:center;gap:12px;height:40px;flex:none}
-.brand{font-weight:800;font-size:15px;color:var(--accent)}
-.bar{flex:1;height:6px;background:var(--line);border-radius:9px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:9px;transition:width .35s ease}
-.back{background:none;border:0;font:inherit;color:var(--muted);font-size:15px;padding:6px 2px;cursor:pointer;visibility:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5;overflow:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.app{height:100%;height:100dvh;max-width:560px;margin:0 auto;display:flex;flex-direction:column;
+  padding-top:max(12px,env(safe-area-inset-top,0px));padding-bottom:max(12px,env(safe-area-inset-bottom,0px));
+  padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+
+/* פס עליון */
+.top{display:flex;align-items:center;gap:14px;height:40px;flex:none}
+.brand{font-weight:800;font-size:14px;letter-spacing:.01em;color:var(--ink);white-space:nowrap}
+.bar{flex:1;height:4px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);border-radius:9px;transition:width .5s var(--ease)}
+.back{width:36px;height:36px;margin-inline-start:-8px;flex:none;display:grid;place-items:center;background:none;border:0;border-radius:50%;color:var(--muted);padding:0;cursor:pointer;visibility:hidden;transition:background .15s,color .15s}
+.back svg{width:20px;height:20px;display:block}
+.back:active{background:var(--field);color:var(--ink)}
+
+/* מסכים */
 .stage{flex:1;position:relative;min-height:0}
-.step{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:0;transform:translateX(-24px);pointer-events:none;transition:opacity .28s ease,transform .28s ease}
-.step.on{opacity:1;transform:none;pointer-events:auto}
-.step.left{transform:translateX(24px)}
-h1{margin:0;font-size:clamp(24px,6.6vw,30px);line-height:1.22;font-weight:800;text-wrap:balance}
-.sub{margin:0;color:var(--muted);font-size:16px}
-.gift{align-self:flex-start;background:var(--soft);color:var(--accent);font-weight:700;border-radius:999px;padding:6px 14px;font-size:15px}
-.field{display:flex;flex-direction:column;gap:5px}
+.step{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:16px;opacity:0;visibility:hidden;transform:translateX(-18px);pointer-events:none;transition:opacity .3s ease,transform .45s var(--ease),visibility 0s .45s}
+.step.on{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition-delay:0s}
+.step.left{transform:translateX(18px)}
+.step.on>*{animation:rise .5s var(--ease) backwards}
+.step.on>:nth-child(2){animation-delay:.04s}
+.step.on>:nth-child(3){animation-delay:.08s}
+.step.on>:nth-child(4){animation-delay:.12s}
+.step.on>:nth-child(5){animation-delay:.16s}
+.step.on>:nth-child(n+6){animation-delay:.2s}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+
+h1{margin:0;font-size:clamp(26px,7.2vw,32px);line-height:1.2;font-weight:800;letter-spacing:-.012em;text-wrap:balance}
+.sub{margin:-8px 0 0;color:var(--muted);font-size:16px;text-wrap:pretty}
+.gift{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;background:var(--soft);color:var(--accent);font-weight:500;border-radius:999px;padding:6px 13px 6px 14px;font-size:14.5px;line-height:1.4}
+.gift svg{width:16px;height:16px;flex:none}
+.gift b{font-weight:700}
+
+/* שדות */
+.field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:14px;font-weight:500;color:var(--muted)}
-input,textarea{width:100%;font:inherit;font-size:17px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:13px 15px}
-textarea{height:120px;resize:none}
-input:focus,textarea:focus{outline:none;border-color:var(--accent)}
-input.bad,textarea.bad{border-color:var(--err)}
+input,textarea{width:100%;font:inherit;font-size:17px;color:var(--ink);background:var(--field);border:1.5px solid transparent;border-radius:14px;padding:12px 15px;transition:border-color .15s,background .15s,box-shadow .15s;-webkit-appearance:none;appearance:none}
+textarea{height:132px;resize:none;line-height:1.5}
+::placeholder{color:var(--faint);opacity:1}
+input:focus,textarea:focus{outline:none;background:#fff;border-color:var(--accent);box-shadow:0 0 0 4px var(--soft)}
+input.bad,textarea.bad{border-color:var(--err);background:#fff}
+input.bad:focus,textarea.bad:focus{box-shadow:0 0 0 4px #FBE9E7}
+
+/* תשובות */
 .opts{display:flex;flex-direction:column;gap:10px}
-.opt{font:inherit;font-size:17px;text-align:right;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:border-color .12s,background .12s}
-.opt:active{transform:scale(.99)}
-.opt.sel{border-color:var(--accent);background:var(--soft);font-weight:500}
-.opt .box{width:20px;height:20px;border:1.5px solid var(--line);border-radius:6px;flex:none;display:grid;place-items:center;font-size:13px;color:#fff}
-.opt.sel .box{background:var(--accent);border-color:var(--accent)}
-.go{font:inherit;font-weight:700;font-size:18px;border:0;border-radius:14px;padding:15px;background:var(--accent);color:#fff;cursor:pointer;width:100%}
+.opt{font:inherit;font-size:17px;line-height:1.35;text-align:right;background:#fff;color:var(--ink);border:1.5px solid var(--line);border-radius:16px;min-height:58px;padding:12px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color .15s,background .15s,transform .15s var(--ease)}
+.opt:active{transform:scale(.985);background:var(--field)}
+.opt.sel{border-color:var(--accent);background:var(--soft)}
+@media (hover:hover){.opt:hover{border-color:#B9C8CA}.opt.sel:hover{border-color:var(--accent)}.go:hover{background:var(--accent-press)}.back:hover{background:var(--field);color:var(--ink)}}
+/* סימון בחירה יחידה */
+.opts[data-auto] .opt::after{content:"";margin-inline-start:auto;width:22px;height:22px;flex:none;border-radius:50%;border:1.5px solid #C9D4D6;background:center/12px no-repeat;transition:background-color .15s,border-color .15s}
+.opts[data-auto] .opt.sel::after,.opt.sel .box{background-color:var(--accent);border-color:var(--accent);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.5 6.4l2.4 2.3 4.6-5'/%3E%3C/svg%3E")}
+/* תיבת סימון לבחירה מרובה */
+.opt .box{width:22px;height:22px;border:1.5px solid #C9D4D6;border-radius:7px;flex:none;font-size:0;color:transparent;background:center/12px no-repeat;transition:background-color .15s,border-color .15s}
+
+/* כפתורים */
+.go{font:inherit;font-weight:700;font-size:18px;border:0;border-radius:16px;min-height:56px;padding:12px 16px;background:var(--accent);color:#fff;cursor:pointer;width:100%;transition:background .15s,transform .15s var(--ease),opacity .15s}
+.go:active{transform:scale(.985);background:var(--accent-press)}
 .go:disabled{opacity:.55}
-.msg{color:var(--err);font-size:14px;min-height:1.2em;margin:0}
-.code{align-self:center;font-size:32px;font-weight:800;letter-spacing:.08em;border:2px dashed var(--accent);border-radius:14px;padding:10px 24px;color:var(--accent);background:var(--soft);user-select:all;direction:ltr}
-.center{text-align:center;align-items:stretch}
-.copy{background:var(--ink)}
-.foot{flex:none;text-align:center;font-size:12px;color:var(--muted);height:18px}
-button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-offset:2px}
-@media (max-height:620px){h1{font-size:22px}.opt{padding:12px 14px}textarea{height:90px}.step{gap:10px}}
-@media (prefers-reduced-motion:reduce){.step,.bar i{transition:none}}
+.msg{color:var(--err);font-size:14px;min-height:1.5em;margin:-8px 0;text-align:center}
+
+/* מסך תודה */
+.center{text-align:center;align-items:center;gap:18px}
+.done{width:64px;height:64px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center}
+.done svg{width:30px;height:30px}
+.done path{stroke-dasharray:30;stroke-dashoffset:30}
+.step.on .done path{animation:draw .5s .35s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lead{margin:-8px 0 0;font-size:18px;color:var(--ink)}
+.code{width:100%;max-width:340px;margin:6px 0;border-radius:22px;padding:20px 24px 18px;background:var(--soft);color:var(--accent);line-height:1.1}
+.code strong{display:block;font-size:46px;font-weight:800;letter-spacing:-.02em}
+.code span{display:block;margin-top:6px;font-size:15px;font-weight:500}
+.center .sub{margin:0;max-width:340px}
+.center .small{font-size:14px;color:var(--faint)}
+
+.foot{flex:none;display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--faint);height:20px}
+.foot svg{width:12px;height:12px}
+button:focus-visible{outline:3px solid var(--soft);outline-offset:2px}
+
+@media (max-height:720px){.step{gap:13px}h1{font-size:clamp(24px,6.6vw,28px)}.opt{min-height:52px;padding:10px 16px}.opts{gap:8px}input{padding:10px 15px}.field{gap:4px}textarea{height:112px}.go{min-height:52px}.sub{margin-top:-6px}}
+@media (max-height:600px){.step{gap:10px}h1{font-size:22px}.opt{min-height:46px;padding:8px 14px;font-size:16px}textarea{height:84px}.gift{display:none}}
+@media (min-width:700px) and (min-height:760px){.app{padding-top:28px;padding-bottom:22px}h1{font-size:36px}.step{gap:20px}.opt{min-height:62px}.opts{gap:12px}}
+@media (prefers-reduced-motion:reduce){.step,.bar i{transition:none}.step.on>*{animation:none}.done path{stroke-dashoffset:0;animation:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="top">
-    <button class="back" id="back" type="button">→ חזרה</button>
+    <button class="back" id="back" type="button" aria-label="חזרה לשאלה הקודמת"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg></button>
     <div class="bar"><i id="bar"></i></div>
     <span class="brand">נעם AI</span>
   </div>
@@ -65,8 +110,8 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-o
   <div class="stage" id="stage">
     <!-- 0: פרטים -->
     <section class="step on" data-step="0">
-      <span class="gift">🎁 מי שעונה מקבל 200 ש״ח הנחה בהשקה</span>
-      <h1>רגע לפני שהקורס יוצא, 4 שאלות קצרצרות</h1>
+      <span class="gift"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7h11v6.5h-11zM1.5 4.5h13V7h-13zM8 4.5v9M8 4.5C6.5 4.5 5 3.8 5 2.7 5 1.2 7.2 1.3 8 4.5zm0 0c1.5 0 3-.7 3-1.8 0-1.5-2.2-1.4-3 1.8z"/></svg><span>מי שעונה מקבל <b>200 ש״ח הנחה</b> בהשקה</span></span>
+      <h1>רגע לפני שהקורס יוצא, כמה שאלות קצרצרות</h1>
       <div class="field"><label for="name">שם</label><input id="name" autocomplete="name" maxlength="120"></div>
       <div class="field"><label for="phone">וואטסאפ, לשם אשלח לך את קוד ההנחה בהשקה</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" dir="ltr" style="text-align:right"></div>
       <div class="field"><label for="email">מייל (לא חובה)</label><input id="email" type="email" inputmode="email" autocomplete="email" maxlength="200" dir="ltr" style="text-align:right"></div>
@@ -85,58 +130,61 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-o
       </div>
     </section>
 
-    <!-- 2: רמה -->
+    <!-- 2: מה יודע -->
     <section class="step" data-step="2">
-      <h1>איפה אתה היום עם בינה מלאכותית?</h1>
+      <h1>מה אתה כבר יודע על קלוד קוד?</h1>
       <div class="opts" data-key="ai_level" data-auto>
-        <button class="opt" type="button">עוד לא ממש השתמשתי</button>
-        <button class="opt" type="button">צ׳אט GPT או ג׳מיני מדי פעם</button>
-        <button class="opt" type="button">משתמש בזה הרבה</button>
-        <button class="opt" type="button">כבר נגעתי בקלוד קוד</button>
+        <button class="opt" type="button">כלום, פעם ראשונה שאני שומע</button>
+        <button class="opt" type="button">רק את השם / מהסטטוסים שלך</button>
+        <button class="opt" type="button">יש לי רעיון כללי מה הוא עושה</button>
+        <button class="opt" type="button">כבר עובד איתו</button>
       </div>
     </section>
 
-    <!-- 3: עובד -->
+    <!-- 3: מה מנע -->
     <section class="step" data-step="3">
-      <h1>אם היה לך עובד על המחשב, מה הדבר הראשון שהיית נותן לו?</h1>
-      <p class="sub">משהו שלוקח לך זמן או מעצבן אותך. כמה מילים מספיקות</p>
-      <textarea id="first_task" maxlength="3000" placeholder="למשל: הצעות מחיר, לעצב סטטוסים, לסדר חשבוניות..."></textarea>
-      <p class="msg" id="m3"></p>
+      <h1>מה מנע ממך עד היום להתחיל עם קלוד קוד?</h1>
+      <p class="sub">כמה מילים מספיקות. לא חובה</p>
+      <textarea id="blocker_other" maxlength="1000" placeholder="למשל: לא יודע מאיפה להתחיל, נשמע מסובך, אין זמן..."></textarea>
       <button class="go" data-next="3" type="button">המשך</button>
     </section>
 
-    <!-- 4: חסמים -->
+    <!-- 4: להוריד מהראש -->
     <section class="step" data-step="4">
-      <h1>מה הכי מעכב אותך?</h1>
-      <p class="sub">אפשר לבחור כמה</p>
-      <div class="opts" data-key="blockers" data-multi>
-        <button class="opt" type="button"><span class="box">✓</span>לא יודע מאיפה להתחיל</button>
-        <button class="opt" type="button"><span class="box">✓</span>נשמע מסובך וטכני</button>
-        <button class="opt" type="button"><span class="box">✓</span>פחד שיעשה נזק או לפרטיות</button>
-        <button class="opt" type="button"><span class="box">✓</span>אין לי זמן</button>
-        <button class="opt" type="button"><span class="box">✓</span>המחיר</button>
-      </div>
+      <h1>מה היית רוצה שקלוד קוד יוריד לך מהראש?</h1>
+      <p class="sub">משהו שלוקח לך זמן או מעצבן אותך. כמה מילים מספיקות</p>
+      <textarea id="first_task" maxlength="3000" placeholder="למשל: הצעות מחיר, לעצב סטטוסים, לסדר חשבוניות..."></textarea>
       <p class="msg" id="m4"></p>
-      <button class="go" id="send" type="button">שליחה 🎁</button>
+      <button class="go" data-next="4" type="button">המשך</button>
     </section>
 
-    <!-- 5: תודה -->
-    <section class="step center" data-step="5">
-      <h1>תודה רבה! 🙏</h1>
-      <p class="sub" style="font-size:18px;color:var(--ink)">נכנסת לרשימה של ההנחה 🎁</p>
-      <div class="code" style="font-size:24px;letter-spacing:0;direction:rtl">200 ש״ח הנחה</div>
+    <!-- 5: להעמיק -->
+    <section class="step" data-step="5">
+      <h1>במה היית רוצה שנעמיק בקורס?</h1>
+      <p class="sub">לא חובה</p>
+      <textarea id="deepen" maxlength="3000" placeholder="למשל: לבנות אתר, לסדר את היומן, אבטחה..."></textarea>
+      <p class="msg" id="m5"></p>
+      <button class="go" id="send" type="button">שליחה</button>
+    </section>
+
+    <!-- 6: תודה -->
+    <section class="step center" data-step="6">
+      <div class="done" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15.5l5.5 5.5L23 9.5"/></svg></div>
+      <h1>תודה רבה!</h1>
+      <p class="lead">נכנסת לרשימה של ההנחה</p>
+      <div class="code"><strong>200 ש״ח</strong><span>הנחה בהשקה</span></div>
       <p class="sub">ברגע שההשקה נפתחת, בתחילת השבוע הבא, אשלח לך בוואטסאפ קוד אישי עם ההנחה.</p>
-      <p class="sub" style="font-size:14px">הקוד יהיה תקף רק בימי ההשקה המוקדמת. בינתיים, שימו עין על הסטטוס 👀</p>
+      <p class="sub small">הקוד יהיה תקף רק בימי ההשקה המוקדמת. בינתיים, שימו עין על הסטטוס.</p>
     </section>
   </div>
 
-  <div class="foot">התשובות נשמרות אצלי בלבד</div>
+  <div class="foot"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5h7v5h-7zM4 5.5V4a2 2 0 014 0v1.5"/></svg>התשובות נשמרות אצלי בלבד</div>
 </div>
 
 <script>
 (function(){
   var API="https://xvqdukxdwgwxoixzdosx.supabase.co/rest/v1/launch_survey", KEY="sb_publishable_giqmoCG-HL9J3OLU0MhtYg_IClNM7L5";
-  var steps=[].slice.call(document.querySelectorAll('.step')), cur=0, LAST=4;
+  var steps=[].slice.call(document.querySelectorAll('.step')), cur=0, LAST=5, DONE=6;
   var data={occupation:null,ai_level:null,blockers:[]};
   var src=(new URLSearchParams(location.search).get('src')||'').slice(0,60)||null;
   var $=function(id){return document.getElementById(id)};
@@ -146,10 +194,10 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-o
     steps[cur].classList.remove('on'); steps[cur].classList.toggle('left',!dir);
     cur=n; steps[cur].classList.remove('left'); steps[cur].classList.add('on');
     $('bar').style.width=Math.min(100,(cur/(LAST+1))*100)+'%';
-    $('back').style.visibility=(cur>0&&cur<5)?'visible':'hidden';
+    $('back').style.visibility=(cur>0&&cur<DONE)?'visible':'hidden';
     var f=steps[cur].querySelector('input,textarea'); if(f&&cur!==0) setTimeout(function(){f.focus({preventScroll:true})},300);
   }
-  try{ if(localStorage.getItem('survey_done')==='1'){ steps[0].classList.remove('on'); cur=5; steps[5].classList.add('on'); $('bar').style.width='100%'; } }catch(e){}
+  try{ if(localStorage.getItem('survey_done')==='1'){ steps[0].classList.remove('on'); cur=DONE; steps[DONE].classList.add('on'); $('bar').style.width='100%'; } }catch(e){}
 
   $('back').onclick=function(){ if(cur>0) go(cur-1); };
 
@@ -178,18 +226,18 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-o
         if(!ok) return;
         document.activeElement && document.activeElement.blur();
       }
-      if(s===3){ var t=$('first_task'); if(t.value.trim().length<2){ t.classList.add('bad'); $('m3').textContent='כתבו כמה מילים'; return; } t.classList.remove('bad'); $('m3').textContent=''; document.activeElement.blur(); }
+      if(s===4){ var t=$('first_task'); if(t.value.trim().length<2){ t.classList.add('bad'); $('m4').textContent='כתבו כמה מילים'; return; } t.classList.remove('bad'); $('m4').textContent=''; document.activeElement.blur(); }
       go(s+1);
     };
   });
 
   $('send').onclick=function(){
-    var b=this; b.disabled=true; b.textContent='שולח...'; $('m4').textContent='';
+    var b=this; b.disabled=true; b.textContent='שולח...'; $('m5').textContent='';
     var body={ name:$('name').value.trim(), phone:$('phone').value.trim(), email:$('email').value.trim()||null,
-      occupation:data.occupation, ai_level:data.ai_level, first_task:$('first_task').value.trim(), blockers:data.blockers, source:src };
+      occupation:data.occupation, ai_level:data.ai_level, first_task:$('first_task').value.trim(), blockers:data.blockers, blocker_other:$('blocker_other').value.trim()||null, deepen:$('deepen').value.trim()||null, source:src };
     fetch(API,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(body)})
-      .then(function(r){ if(!r.ok) throw 0; try{localStorage.setItem('survey_done','1')}catch(e){} go(5); })
-      .catch(function(){ b.disabled=false; b.textContent='שליחה 🎁'; $('m4').textContent='משהו השתבש. בדקו שיש אינטרנט ונסו שוב, התשובות לא נמחקו.'; });
+      .then(function(r){ if(!r.ok) throw 0; try{localStorage.setItem('survey_done','1')}catch(e){} go(DONE); })
+      .catch(function(){ b.disabled=false; b.textContent='שליחה'; $('m5').textContent='משהו השתבש. בדקו שיש אינטרנט ונסו שוב, התשובות לא נמחקו.'; });
   };
 
   document.addEventListener('keydown',function(e){ if(e.key==='Enter'&&e.target.tagName==='INPUT'){ var g=steps[cur].querySelector('[data-next]'); if(g) g.click(); }});
