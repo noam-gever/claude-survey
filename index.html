@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>שאלון קצר | קורס קלוד קוד | נעם AI</title>
+<meta name="description" content="2 דקות, ובסוף מחכה לכם קוד הנחה של 200 ש״ח לקורס קלוד קוד.">
+<meta property="og:title" content="שאלון קצר לפני השקת קורס קלוד קוד">
+<meta property="og:description" content="2 דקות, ובסוף מחכה לכם קוד הנחה של 200 ש״ח.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#F2F5F8;--card:#fff;--ink:#14212B;--muted:#5E6D79;--line:#D9E1E7;--accent:#2F5BEA;--accent-ink:#fff;--soft:#E9EEFE;--ok:#0F7A5C;--err:#C2382F;--font:"Rubik",system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:640px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--accent)}
+.hero{background:var(--card);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;border-top:6px solid var(--accent)}
+h1{margin:0;font-size:clamp(25px,6vw,32px);line-height:1.25;font-weight:800;text-wrap:balance}
+.lead{margin:0;color:var(--muted)}
+.gift{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:var(--soft);color:var(--accent);font-weight:700;border-radius:999px;padding:6px 14px;font-size:15px}
+form{display:flex;flex-direction:column;gap:14px}
+.q{background:var(--card);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;border:2px solid transparent;transition:border-color .15s}
+.q.bad{border-color:var(--err)}
+.q label.t,.q legend{font-weight:700;font-size:18px;padding:0}
+.q .hint{color:var(--muted);font-size:14px;margin-top:-6px}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+input[type=text],input[type=tel],textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);background:var(--card)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;transition:all .12s}
+.opt:hover{border-color:var(--accent)}
+.opt input{accent-color:var(--accent);width:18px;height:18px;margin:0;flex:none}
+.opt:has(input:checked){border-color:var(--accent);background:var(--soft)}
+.err{color:var(--err);font-size:14px;display:none}
+.q.bad .err{display:block}
+button{font:inherit;font-weight:700;font-size:19px;border:0;border-radius:14px;padding:16px;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+button:focus-visible,.opt:focus-within{outline:3px solid var(--soft);outline-offset:2px}
+.status{text-align:center;font-size:15px;color:var(--err);min-height:1.2em;margin:0}
+.done{background:var(--card);border-radius:20px;padding:30px 22px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;border-top:6px solid var(--ok)}
+.code{font-size:34px;font-weight:800;letter-spacing:.08em;border:2px dashed var(--accent);border-radius:14px;padding:12px 24px;color:var(--accent);background:var(--soft);user-select:all;direction:ltr}
+.copy{font-size:16px;padding:10px 20px;background:var(--ink)}
+.small{font-size:14px;color:var(--muted);margin:0}
+.foot{text-align:center;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">נעם AI</div>
+
+  <div id="intro" class="hero">
+    <h1>רגע לפני שקורס קלוד קוד יוצא, אני רוצה לשמוע מכם</h1>
+    <p class="lead">5 שאלות קצרות, באמת 2 דקות. התשובות שלכם יעזרו לי לדעת מה הכי חשוב לכם.</p>
+    <span class="gift">🎁 בסוף מחכה לכם קוד הנחה של 200 ש״ח</span>
+  </div>
+
+  <form id="f" novalidate>
+    <div class="q" data-req="name">
+      <label class="t" for="name">איך קוראים לך?</label>
+      <input type="text" id="name" name="name" autocomplete="name" maxlength="120">
+      <span class="err">צריך שם, כדי שאדע למי לשלוח את ההנחה</span>
+    </div>
+
+    <div class="q" data-req="phone">
+      <label class="t" for="phone">מספר וואטסאפ</label>
+      <span class="hint">כדי שאוכל לעדכן אותך ברגע שההשקה נפתחת</span>
+      <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" dir="ltr" style="text-align:right">
+      <span class="err">צריך מספר טלפון תקין</span>
+    </div>
+
+    <div class="q" data-req="occupation">
+      <fieldset>
+        <legend>במה אתה עוסק?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="occupation" value="בעל עסק"> בעל עסק</label>
+          <label class="opt"><input type="radio" name="occupation" value="עצמאי / פרילנסר"> עצמאי / פרילנסר</label>
+          <label class="opt"><input type="radio" name="occupation" value="שכיר"> שכיר</label>
+          <label class="opt"><input type="radio" name="occupation" value="אחר"> אחר</label>
+        </div>
+        <input type="text" id="field" name="field" maxlength="300" placeholder="ובאיזה תחום? (למשל: הפקת אירועים, הנהלת חשבונות, חינוך)">
+      </fieldset>
+      <span class="err">בחרו אפשרות אחת</span>
+    </div>
+
+    <div class="q" data-req="ai_level">
+      <fieldset>
+        <legend>איפה אתה היום עם בינה מלאכותית?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="ai_level" value="עוד לא השתמשתי"> עוד לא ממש השתמשתי</label>
+          <label class="opt"><input type="radio" name="ai_level" value="צ׳אט GPT / ג׳מיני מדי פעם"> צ׳אט GPT או ג׳מיני מדי פעם</label>
+          <label class="opt"><input type="radio" name="ai_level" value="משתמש הרבה"> משתמש בזה הרבה</label>
+          <label class="opt"><input type="radio" name="ai_level" value="כבר נגעתי בקלוד קוד"> כבר נגעתי בקלוד קוד</label>
+        </div>
+      </fieldset>
+      <span class="err">בחרו אפשרות אחת</span>
+    </div>
+
+    <div class="q" data-req="first_task">
+      <label class="t" for="first_task">אם היה לך עובד על המחשב, מה הדבר הראשון שהיית נותן לו לעשות?</label>
+      <span class="hint">כל דבר שלוקח לך זמן או מעצבן אותך. כמה מילים מספיקות</span>
+      <textarea id="first_task" name="first_task" maxlength="3000" placeholder="למשל: להכין הצעות מחיר, לעצב סטטוסים, לסדר חשבוניות..."></textarea>
+      <span class="err">כתבו לפחות כמה מילים</span>
+    </div>
+
+    <div class="q">
+      <fieldset>
+        <legend>מה הכי מעכב או מפחיד אותך?</legend>
+        <span class="hint">אפשר לבחור כמה</span>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="blockers" value="לא יודע מאיפה להתחיל"> לא יודע מאיפה להתחיל</label>
+          <label class="opt"><input type="checkbox" name="blockers" value="נשמע מסובך / טכני"> נשמע מסובך וטכני מדי</label>
+          <label class="opt"><input type="checkbox" name="blockers" value="פחד שיעשה נזק / פרטיות"> פחד שיעשה נזק במחשב או לפרטיות</label>
+          <label class="opt"><input type="checkbox" name="blockers" value="אין לי זמן"> אין לי זמן ללמוד</label>
+          <label class="opt"><input type="checkbox" name="blockers" value="מחיר"> המחיר</label>
+        </div>
+        <input type="text" id="blocker_other" name="blocker_other" maxlength="1000" placeholder="משהו אחר? כתבו כאן">
+      </fieldset>
+    </div>
+
+    <button type="submit" id="btn">שליחה וקבלת קוד ההנחה</button>
+    <p class="status" id="status" role="status"></p>
+  </form>
+
+  <div id="done" class="done" hidden>
+    <h1>תודה רבה! 🙏</h1>
+    <p class="lead">הנה קוד ההנחה שלך, 200 ש״ח על קורס קלוד קוד:</p>
+    <div class="code" id="code">CLAUDE200</div>
+    <button class="copy" id="copy" type="button">העתקת הקוד</button>
+    <p class="small">הקוד תקף רק בהשקה המוקדמת, בתחילת השבוע הבא. שימו עין על הסטטוס 👀</p>
+  </div>
+
+  <p class="foot">נעם AI · התשובות נשמרות אצלי בלבד ולא מועברות לאף אחד</p>
+</div>
+
+<script>
+(function(){
+  var URL_ = "https://xvqdukxdwgwxoixzdosx.supabase.co/rest/v1/launch_survey";
+  var KEY = "sb_publishable_giqmoCG-HL9J3OLU0MhtYg_IClNM7L5";
+  var f = document.getElementById('f'), btn = document.getElementById('btn'), st = document.getElementById('status');
+  var src = (new URLSearchParams(location.search).get('src') || '').slice(0,60) || null;
+
+  function val(n){ var el=f.elements[n]; if(!el) return ''; if(el.length!==undefined && el.tagName===undefined){ for(var i=0;i<el.length;i++) if(el[i].checked) return el[i].value; return ''; } return (el.value||'').trim(); }
+  function showDone(){ document.getElementById('intro').hidden=true; f.hidden=true; document.getElementById('done').hidden=false; window.scrollTo(0,0); }
+  try{ if(localStorage.getItem('survey_done')==='1') showDone(); }catch(e){}
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault(); st.textContent='';
+    var data = {
+      name: val('name'), phone: val('phone'), occupation: val('occupation')||null,
+      field: val('field')||null, ai_level: val('ai_level')||null, first_task: val('first_task')||null,
+      blockers: Array.prototype.slice.call(f.querySelectorAll('input[name=blockers]:checked')).map(function(x){return x.value}),
+      blocker_other: val('blocker_other')||null, source: src
+    };
+    var bad = [];
+    if(!data.name) bad.push('name');
+    if(data.phone.replace(/\D/g,'').length < 9) bad.push('phone');
+    if(!data.occupation) bad.push('occupation');
+    if(!data.ai_level) bad.push('ai_level');
+    if(!data.first_task || data.first_task.length < 2) bad.push('first_task');
+    f.querySelectorAll('.q').forEach(function(q){ q.classList.toggle('bad', bad.indexOf(q.dataset.req)>-1); });
+    if(bad.length){ var first=f.querySelector('.q.bad'); first.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+
+    try{ localStorage.setItem('survey_draft', JSON.stringify(data)); }catch(e){}
+    btn.disabled = true; btn.textContent = 'שולח...';
+    fetch(URL_, { method:'POST', headers:{ 'apikey':KEY, 'Authorization':'Bearer '+KEY, 'Content-Type':'application/json', 'Prefer':'return=minimal' }, body: JSON.stringify(data) })
+      .then(function(r){ if(!r.ok) throw new Error(r.status); try{ localStorage.setItem('survey_done','1'); localStorage.removeItem('survey_draft'); }catch(e){} showDone(); })
+      .catch(function(){ btn.disabled=false; btn.textContent='שליחה וקבלת קוד ההנחה'; st.textContent='משהו השתבש בשליחה. בדקו שיש אינטרנט ונסו שוב. התשובות שלכם לא נמחקו.'; });
+  });
+
+  f.addEventListener('input', function(e){ var q=e.target.closest('.q'); if(q) q.classList.remove('bad'); });
+  document.getElementById('copy').addEventListener('click', function(){
+    var c = document.getElementById('code').textContent, b=this;
+    (navigator.clipboard ? navigator.clipboard.writeText(c) : Promise.reject()).then(function(){ b.textContent='הועתק ✓'; }).catch(function(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('code')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='סמנו והעתיקו'; });
+  });
+})();
+</script>
+</body>
+</html>
