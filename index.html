@@ -65,10 +65,10 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-o
   <div class="stage" id="stage">
     <!-- 0: פרטים -->
     <section class="step on" data-step="0">
-      <span class="gift">🎁 בסוף: קוד הנחה של 200 ש״ח</span>
+      <span class="gift">🎁 מי שעונה מקבל 200 ש״ח הנחה בהשקה</span>
       <h1>רגע לפני שהקורס יוצא, 4 שאלות קצרצרות</h1>
       <div class="field"><label for="name">שם</label><input id="name" autocomplete="name" maxlength="120"></div>
-      <div class="field"><label for="phone">וואטסאפ, כדי לשלוח לך את קוד ההנחה</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" dir="ltr" style="text-align:right"></div>
+      <div class="field"><label for="phone">וואטסאפ, לשם אשלח לך את קוד ההנחה בהשקה</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" dir="ltr" style="text-align:right"></div>
       <div class="field"><label for="email">מייל (לא חובה)</label><input id="email" type="email" inputmode="email" autocomplete="email" maxlength="200" dir="ltr" style="text-align:right"></div>
       <p class="msg" id="m0"></p>
       <button class="go" data-next="0" type="button">יאללה, מתחילים</button>
@@ -117,16 +117,16 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-o
         <button class="opt" type="button"><span class="box">✓</span>המחיר</button>
       </div>
       <p class="msg" id="m4"></p>
-      <button class="go" id="send" type="button">שליחה וקבלת הקוד 🎁</button>
+      <button class="go" id="send" type="button">שליחה 🎁</button>
     </section>
 
     <!-- 5: תודה -->
     <section class="step center" data-step="5">
       <h1>תודה רבה! 🙏</h1>
-      <p class="sub">הקוד שלך, 200 ש״ח הנחה על קורס קלוד קוד:</p>
-      <div class="code" id="code">CLAUDE200</div>
-      <button class="go copy" id="copy" type="button">העתקת הקוד</button>
-      <p class="sub" style="font-size:14px">תקף רק בהשקה המוקדמת, בתחילת השבוע הבא. שימו עין על הסטטוס 👀</p>
+      <p class="sub" style="font-size:18px;color:var(--ink)">נכנסת לרשימה של ההנחה 🎁</p>
+      <div class="code" style="font-size:24px;letter-spacing:0;direction:rtl">200 ש״ח הנחה</div>
+      <p class="sub">ברגע שההשקה נפתחת, בתחילת השבוע הבא, אשלח לך בוואטסאפ קוד אישי עם ההנחה.</p>
+      <p class="sub" style="font-size:14px">הקוד יהיה תקף רק בימי ההשקה המוקדמת. בינתיים, שימו עין על הסטטוס 👀</p>
     </section>
   </div>
 
@@ -189,13 +189,9 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--soft);outline-o
       occupation:data.occupation, ai_level:data.ai_level, first_task:$('first_task').value.trim(), blockers:data.blockers, source:src };
     fetch(API,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(body)})
       .then(function(r){ if(!r.ok) throw 0; try{localStorage.setItem('survey_done','1')}catch(e){} go(5); })
-      .catch(function(){ b.disabled=false; b.textContent='שליחה וקבלת הקוד 🎁'; $('m4').textContent='משהו השתבש. בדקו שיש אינטרנט ונסו שוב, התשובות לא נמחקו.'; });
+      .catch(function(){ b.disabled=false; b.textContent='שליחה 🎁'; $('m4').textContent='משהו השתבש. בדקו שיש אינטרנט ונסו שוב, התשובות לא נמחקו.'; });
   };
 
-  $('copy').onclick=function(){
-    var b=this,c=$('code').textContent;
-    (navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){b.textContent='הועתק ✓'}).catch(function(){var r=document.createRange();r.selectNodeContents($('code'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='סמנו והעתיקו'});
-  };
   document.addEventListener('keydown',function(e){ if(e.key==='Enter'&&e.target.tagName==='INPUT'){ var g=steps[cur].querySelector('[data-next]'); if(g) g.click(); }});
 })();
 </script>
