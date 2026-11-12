@@ -133,12 +133,9 @@ button:focus-visible{outline:3px solid var(--soft);outline-offset:2px}
     <!-- 2: מה יודע -->
     <section class="step" data-step="2">
       <h1>מה אתה כבר יודע על קלוד קוד?</h1>
-      <div class="opts" data-key="ai_level" data-auto>
-        <button class="opt" type="button">כלום, פעם ראשונה שאני שומע</button>
-        <button class="opt" type="button">רק את השם / מהסטטוסים שלך</button>
-        <button class="opt" type="button">יש לי רעיון כללי מה הוא עושה</button>
-        <button class="opt" type="button">כבר עובד איתו</button>
-      </div>
+      <p class="sub">כמה מילים מספיקות. גם "כלום" זו תשובה טובה</p>
+      <textarea id="ai_know" maxlength="1000" placeholder="למשל: רק שמעתי את השם, ראיתי בסטטוסים שלך..."></textarea>
+      <button class="go" data-next="2" type="button">המשך</button>
     </section>
 
     <!-- 3: מה מנע -->
@@ -234,7 +231,7 @@ button:focus-visible{outline:3px solid var(--soft);outline-offset:2px}
   $('send').onclick=function(){
     var b=this; b.disabled=true; b.textContent='שולח...'; $('m5').textContent='';
     var body={ name:$('name').value.trim(), phone:$('phone').value.trim(), email:$('email').value.trim()||null,
-      occupation:data.occupation, ai_level:data.ai_level, first_task:$('first_task').value.trim(), blockers:data.blockers, blocker_other:$('blocker_other').value.trim()||null, deepen:$('deepen').value.trim()||null, source:src };
+      occupation:data.occupation, ai_level:$('ai_know').value.trim()||null, first_task:$('first_task').value.trim(), blockers:data.blockers, blocker_other:$('blocker_other').value.trim()||null, deepen:$('deepen').value.trim()||null, source:src };
     fetch(API,{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(body)})
       .then(function(r){ if(!r.ok) throw 0; try{localStorage.setItem('survey_done','1')}catch(e){} go(DONE); })
       .catch(function(){ b.disabled=false; b.textContent='שליחה'; $('m5').textContent='משהו השתבש. בדקו שיש אינטרנט ונסו שוב, התשובות לא נמחקו.'; });
